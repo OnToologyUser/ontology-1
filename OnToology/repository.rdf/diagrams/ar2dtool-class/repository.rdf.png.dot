@@ -1,0 +1,52 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "base:Container" "base:Binary" "-4798e088:15ec9c22f68:-7ffc" "base:Resource" "base:Version" "base:NonRdfSourceDescription" "base:RepositoryRoot" ; /*classes style*/
+	"NULL" -> "-4798e088:15ec9c22f68:-7ffa" [ label = "rdf:rest" ];
+	"NULL" -> "base:NonRdfSourceDescription" [ label = "rdf:first" ];
+	"NULL" -> "-4798e088:15ec9c22f68:-7ffb" [ label = "owl:unionOf" ];
+	"NULL" -> "rdf:nil" [ label = "rdf:rest" ];
+	"NULL" -> "base:Container" [ label = "rdf:first" ];
+	"base:objectSize" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:numFixityRepaired" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:numberOfChildren" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:lastModifiedBy" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:computedChecksum" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:numFixityChecks" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:createdBy" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:couldNotStoreProperty" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:hasLocation" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:isCheckedOut" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:objectCount" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:numFixityErrors" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:hasVersionLabel" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:Binary" -> "base:Container" [ label = "owl:disjointWith" ];
+	"base:Binary" -> "base:NonRdfSourceDescription" [ label = "owl:disjointWith" ];
+	"base:NonRdfSourceDescription" -> "base:Container" [ label = "owl:disjointWith" ];
+	"base:lastModified" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:computedSize" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:" -> "http://fedora.info/definitions/v4/2016/03/01/repository" [ label = "owl:priorVersion" ];
+	"base:created" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:RepositoryRoot" -> "base:Container" [ label = "owl:subClassOf" ];
+	"owl:Thing" -> "xsd:dateTime" [ label = "base:lastModified" ];
+	"base:NonRdfSourceDescription" -> "base:Binary" [ label = "base:hasContent" ];
+	"owl:Thing" -> "xsd:boolean" [ label = "base:isCheckedOut" ];
+	"base:Version" -> "base:Version" [ label = "base:predecessors" ];
+	"base:Container" -> "base:Version" [ label = "base:hasVersion" ];
+	"owl:Thing" -> "xsd:boolean" [ label = "base:writable" ];
+	"owl:Thing" -> "xsd:nonNegativeInteger" [ label = "base:numFixityChecks" ];
+	"owl:Thing" -> "xsd:anyURI" [ label = "base:hasMember" ];
+	"owl:Thing" -> "xsd:nonNegativeInteger" [ label = "base:numFixityErrors" ];
+	"base:Container" -> "-4798e088:15ec9c22f68:-7ffc" [ label = "base:hasChild" ];
+	"base:Resource" -> "base:Container" [ label = "base:hasParent" ];
+	"owl:Thing" -> "xsd:boolean" [ label = "base:hasMoreResults" ];
+	"base:Binary" -> "base:NonRdfSourceDescription" [ label = "base:isContentOf" ];
+	"owl:Thing" -> "base:Resource" [ label = "base:hasResultsMember" ];
+	"owl:Thing" -> "xsd:anyURI" [ label = "base:hasLocation" ];
+	"owl:Thing" -> "xsd:dateTime" [ label = "base:created" ];
+	"owl:Thing" -> "xsd:nonNegativeInteger" [ label = "base:numFixityRepaired" ];
+	"owl:Thing" -> "xsd:string" [ label = "base:hasVersionLabel" ];
+	"owl:Thing" -> "xsd:nonNegativeInteger" [ label = "base:numberOfChildren" ];
+	"base:Container" -> "base:Version" [ label = "base:baseVersion" ];
+
+}

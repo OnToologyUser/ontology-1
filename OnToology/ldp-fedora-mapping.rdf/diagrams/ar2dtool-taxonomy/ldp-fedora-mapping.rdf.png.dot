@@ -1,0 +1,25 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "http://fedora.info/definitions/v4/repository#Container" "http://fedora.info/definitions/v4/repository#Binary" "http://fedora.info/definitions/v4/repository#AnnotatedResource" "http://fedora.info/definitions/v4/repository#Configuration" "http://fedora.info/definitions/v4/repository#Skolem" "http://fedora.info/definitions/v4/repository#Relations" "http://fedora.info/definitions/v4/repository#ServerManaged" "http://fedora.info/definitions/v4/repository#Resource" "http://fedora.info/definitions/v4/repository#InboundReferences" "http://fedora.info/definitions/v4/repository#Pairtree" "http://fedora.info/definitions/v4/repository#Version" "http://fedora.info/definitions/v4/repository#Thing" "http://fedora.info/definitions/v4/repository#NonRdfSourceDescription" "http://fedora.info/definitions/v4/repository#EmbedResources" ; /*classes style*/
+	"ldp:Container" -> "ldp:RDFSource" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#Resource" -> "http://fedora.info/definitions/v4/repository#Thing" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#Relations" -> "http://fedora.info/definitions/v4/repository#Thing" [ label = "rdfs:subClassOf" ];
+	"ldp:RDFSource" -> "ldp:Resource" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#Version" -> "http://fedora.info/definitions/v4/repository#Container" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#InboundReferences" -> "http://fedora.info/definitions/v4/repository#Thing" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#EmbedResources" -> "http://fedora.info/definitions/v4/repository#Thing" [ label = "rdfs:subClassOf" ];
+	"ldp:IndirectContainer" -> "ldp:Container" [ label = "rdfs:subClassOf" ];
+	"ldp:NonRDFSource" -> "ldp:Resource" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#AnnotatedResource" -> "http://fedora.info/definitions/v4/repository#Resource" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#Container" -> "http://fedora.info/definitions/v4/repository#AnnotatedResource" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#Binary" -> "http://fedora.info/definitions/v4/repository#Resource" [ label = "rdfs:subClassOf" ];
+	"ldp:DirectContainer" -> "ldp:Container" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#NonRdfSourceDescription" -> "http://fedora.info/definitions/v4/repository#AnnotatedResource" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#Pairtree" -> "http://fedora.info/definitions/v4/repository#Thing" [ label = "rdfs:subClassOf" ];
+	"ldp:BasicContainer" -> "ldp:Container" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#ServerManaged" -> "http://fedora.info/definitions/v4/repository#Thing" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#Configuration" -> "http://fedora.info/definitions/v4/repository#Thing" [ label = "rdfs:subClassOf" ];
+	"http://fedora.info/definitions/v4/repository#Skolem" -> "http://fedora.info/definitions/v4/repository#Thing" [ label = "rdfs:subClassOf" ];
+
+}

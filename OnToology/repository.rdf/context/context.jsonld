@@ -1,0 +1,191 @@
+{
+  "@context" : {
+    "NonRdfSourceDescription" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#NonRdfSourceDescription"
+    },
+    "numberOfChildren" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#numberOfChildren",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "numFixityChecks" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#numFixityChecks",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "lastModified" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#lastModified",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "created" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#created",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "sparql" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#sparql",
+      "@type" : "@id"
+    },
+    "computedChecksum" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#computedChecksum"
+    },
+    "Skolem" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#Skolem"
+    },
+    "Thing" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#Thing"
+    },
+    "topDataProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+    },
+    "hasContent" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasContent",
+      "@type" : "@id"
+    },
+    "hasParent" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasParent",
+      "@type" : "@id"
+    },
+    "priorVersion" : {
+      "@id" : "http://www.w3.org/2002/07/owl#priorVersion"
+    },
+    "hasVersion" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasVersion",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "hasFixityService" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasFixityService",
+      "@type" : "@id"
+    },
+    "ServerManaged" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#ServerManaged"
+    },
+    "isContentOf" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#isContentOf",
+      "@type" : "@id"
+    },
+    "hasVersionLabel" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasVersionLabel",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "createdBy" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#createdBy"
+    },
+    "hasResultsMember" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasResultsMember",
+      "@type" : "@id"
+    },
+    "hasAccessRoles" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasAccessRoles",
+      "@type" : "@id"
+    },
+    "Relations" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#Relations"
+    },
+    "Pairtree" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#Pairtree"
+    },
+    "hasTransactionProvider" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasTransactionProvider"
+    },
+    "couldNotStoreProperty" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#couldNotStoreProperty"
+    },
+    "lastModifiedBy" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#lastModifiedBy"
+    },
+    "predecessors" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#predecessors",
+      "@type" : "@id"
+    },
+    "hasMember" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasMember",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "numFixityRepaired" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#numFixityRepaired",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "Container" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#Container"
+    },
+    "writable" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#writable",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "numFixityErrors" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#numFixityErrors",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "Tombstone" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#Tombstone"
+    },
+    "objectCount" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#objectCount"
+    },
+    "Binary" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#Binary"
+    },
+    "hasMoreResults" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasMoreResults",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "computedSize" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#computedSize"
+    },
+    "Resource" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#Resource"
+    },
+    "Version" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#Version"
+    },
+    "objectSize" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#objectSize"
+    },
+    "isCheckedOut" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#isCheckedOut",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "hasVersions" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasVersions",
+      "@type" : "@id"
+    },
+    "hasNamespaces" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasNamespaces",
+      "@type" : "@id"
+    },
+    "EmbedResources" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#EmbedResources"
+    },
+    "Configuration" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#Configuration"
+    },
+    "hasLocation" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasLocation",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "AnnotatedResource" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#AnnotatedResource"
+    },
+    "hasChild" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#hasChild",
+      "@type" : "@id"
+    },
+    "baseVersion" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#baseVersion",
+      "@type" : "@id"
+    },
+    "InboundReferences" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#InboundReferences"
+    },
+    "RepositoryRoot" : {
+      "@id" : "http://fedora.info/definitions/v4/repository#RepositoryRoot"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:Container" "base:Binary" "base:AnnotatedResource" "base:Configuration" "base:Skolem" "base:Relations" "base:ServerManaged" "base:Resource" "base:InboundReferences" "base:Pairtree" "base:Version" "base:Thing" "base:NonRdfSourceDescription" "base:EmbedResources" ; /*classes style*/
+	"base:Relations" -> "base:Thing" [ label = "rdfs:subClassOf" ];
+	"base:Binary" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"base:AnnotatedResource" -> "base:Resource" [ label = "rdfs:subClassOf" ];
+	"base:Pairtree" -> "base:Thing" [ label = "rdfs:subClassOf" ];
+	"base:EmbedResources" -> "base:Thing" [ label = "rdfs:subClassOf" ];
+	"base:Resource" -> "base:Thing" [ label = "rdfs:subClassOf" ];
+	"base:Skolem" -> "base:Thing" [ label = "rdfs:subClassOf" ];
+	"base:NonRdfSourceDescription" -> "base:AnnotatedResource" [ label = "rdfs:subClassOf" ];
+	"base:Configuration" -> "base:Thing" [ label = "rdfs:subClassOf" ];
+	"base:Version" -> "base:Container" [ label = "rdfs:subClassOf" ];
+	"base:ServerManaged" -> "base:Thing" [ label = "rdfs:subClassOf" ];
+	"base:InboundReferences" -> "base:Thing" [ label = "rdfs:subClassOf" ];
+	"base:Container" -> "base:AnnotatedResource" [ label = "rdfs:subClassOf" ];
+
+}

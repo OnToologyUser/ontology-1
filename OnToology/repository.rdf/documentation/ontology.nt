@@ -1,0 +1,329 @@
+<http://fedora.info/definitions/v4/repository#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://fedora.info/definitions/v4/repository#> <http://www.w3.org/2000/01/rdf-schema#comment> "Ontology for the Fedora data model, intended primarily to make it possible to expose Fedora-curated RDF predicates via de-reference-able URIs."@en .
+<http://fedora.info/definitions/v4/repository#> <http://www.w3.org/2000/01/rdf-schema#label> "Fedora Commons Repository Ontology"@en .
+<http://fedora.info/definitions/v4/repository#> <http://www.w3.org/2002/07/owl#priorVersion> <http://fedora.info/definitions/v4/2016/03/01/repository> .
+<http://fedora.info/definitions/v4/repository#> <http://www.w3.org/2002/07/owl#versionInfo> "v4/2016/10/18" .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://fedora.info/definitions/v4/repository#baseVersion
+<http://fedora.info/definitions/v4/repository#baseVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#baseVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://fedora.info/definitions/v4/repository#baseVersion> <http://www.w3.org/2000/01/rdf-schema#domain> <http://fedora.info/definitions/v4/repository#Container> .
+<http://fedora.info/definitions/v4/repository#baseVersion> <http://www.w3.org/2000/01/rdf-schema#range> <http://fedora.info/definitions/v4/repository#Version> .
+<http://fedora.info/definitions/v4/repository#baseVersion> <http://www.w3.org/2000/01/rdf-schema#label> "base version"@en .
+# 
+# http://fedora.info/definitions/v4/repository#hasAccessRoles
+<http://fedora.info/definitions/v4/repository#hasAccessRoles> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#hasAccessRoles> <http://www.w3.org/2000/01/rdf-schema#label> "has access roles"@en .
+# 
+# http://fedora.info/definitions/v4/repository#hasChild
+<http://fedora.info/definitions/v4/repository#hasChild> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#hasChild> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://fedora.info/definitions/v4/repository#hasChild> <http://www.w3.org/2000/01/rdf-schema#domain> <http://fedora.info/definitions/v4/repository#Container> .
+<http://fedora.info/definitions/v4/repository#hasChild> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://fedora.info/definitions/v4/repository#Container> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://fedora.info/definitions/v4/repository#hasChild> <http://www.w3.org/2000/01/rdf-schema#label> "has child"@en .
+# 
+# http://fedora.info/definitions/v4/repository#hasContent
+<http://fedora.info/definitions/v4/repository#hasContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#hasContent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> .
+<http://fedora.info/definitions/v4/repository#hasContent> <http://www.w3.org/2000/01/rdf-schema#range> <http://fedora.info/definitions/v4/repository#Binary> .
+<http://fedora.info/definitions/v4/repository#hasContent> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a binary in which content is stored for this datastream."@en .
+<http://fedora.info/definitions/v4/repository#hasContent> <http://www.w3.org/2000/01/rdf-schema#label> "has content"@en .
+# 
+# http://fedora.info/definitions/v4/repository#hasFixityService
+<http://fedora.info/definitions/v4/repository#hasFixityService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#hasFixityService> <http://www.w3.org/2000/01/rdf-schema#label> "has fixity service"@en .
+# 
+# http://fedora.info/definitions/v4/repository#hasMember
+<http://fedora.info/definitions/v4/repository#hasMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://fedora.info/definitions/v4/repository#hasNamespaces
+<http://fedora.info/definitions/v4/repository#hasNamespaces> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#hasNamespaces> <http://www.w3.org/2000/01/rdf-schema#label> "has namespaces"@en .
+# 
+# http://fedora.info/definitions/v4/repository#hasParent
+<http://fedora.info/definitions/v4/repository#hasParent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#hasParent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://fedora.info/definitions/v4/repository#hasParent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://fedora.info/definitions/v4/repository#Resource> .
+<http://fedora.info/definitions/v4/repository#hasParent> <http://www.w3.org/2000/01/rdf-schema#range> <http://fedora.info/definitions/v4/repository#Container> .
+<http://fedora.info/definitions/v4/repository#hasParent> <http://www.w3.org/2000/01/rdf-schema#label> "has parent"@en .
+# 
+# http://fedora.info/definitions/v4/repository#hasResultsMember
+<http://fedora.info/definitions/v4/repository#hasResultsMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#hasResultsMember> <http://www.w3.org/2000/01/rdf-schema#range> <http://fedora.info/definitions/v4/repository#Resource> .
+<http://fedora.info/definitions/v4/repository#hasResultsMember> <http://www.w3.org/2000/01/rdf-schema#label> "has results member"@en .
+# 
+# http://fedora.info/definitions/v4/repository#hasVersion
+<http://fedora.info/definitions/v4/repository#hasVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#hasVersion> <http://www.w3.org/2000/01/rdf-schema#domain> <http://fedora.info/definitions/v4/repository#Container> .
+<http://fedora.info/definitions/v4/repository#hasVersion> <http://www.w3.org/2000/01/rdf-schema#range> <http://fedora.info/definitions/v4/repository#Version> .
+<http://fedora.info/definitions/v4/repository#hasVersion> <http://www.w3.org/2000/01/rdf-schema#label> "has version"@en .
+# 
+# http://fedora.info/definitions/v4/repository#hasVersions
+<http://fedora.info/definitions/v4/repository#hasVersions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#hasVersions> <http://www.w3.org/2000/01/rdf-schema#label> "has versions"@en .
+# 
+# http://fedora.info/definitions/v4/repository#isContentOf
+<http://fedora.info/definitions/v4/repository#isContentOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#isContentOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://fedora.info/definitions/v4/repository#isContentOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://fedora.info/definitions/v4/repository#Binary> .
+<http://fedora.info/definitions/v4/repository#isContentOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> .
+<http://fedora.info/definitions/v4/repository#isContentOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a datastream for which this resource contains the content. "@en .
+<http://fedora.info/definitions/v4/repository#isContentOf> <http://www.w3.org/2000/01/rdf-schema#label> "is content of"@en .
+# 
+# http://fedora.info/definitions/v4/repository#predecessors
+<http://fedora.info/definitions/v4/repository#predecessors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#predecessors> <http://www.w3.org/2000/01/rdf-schema#domain> <http://fedora.info/definitions/v4/repository#Version> .
+<http://fedora.info/definitions/v4/repository#predecessors> <http://www.w3.org/2000/01/rdf-schema#range> <http://fedora.info/definitions/v4/repository#Version> .
+<http://fedora.info/definitions/v4/repository#predecessors> <http://www.w3.org/2000/01/rdf-schema#label> "predecessors"@en .
+# 
+# http://fedora.info/definitions/v4/repository#sparql
+<http://fedora.info/definitions/v4/repository#sparql> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://fedora.info/definitions/v4/repository#sparql> <http://www.w3.org/2000/01/rdf-schema#label> "has sparql service"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://fedora.info/definitions/v4/repository#computedChecksum
+<http://fedora.info/definitions/v4/repository#computedChecksum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#computedChecksum> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://fedora.info/definitions/v4/repository#computedSize
+<http://fedora.info/definitions/v4/repository#computedSize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#computedSize> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://fedora.info/definitions/v4/repository#couldNotStoreProperty
+<http://fedora.info/definitions/v4/repository#couldNotStoreProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#couldNotStoreProperty> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://fedora.info/definitions/v4/repository#created
+<http://fedora.info/definitions/v4/repository#created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#created> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://fedora.info/definitions/v4/repository#created> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://fedora.info/definitions/v4/repository#createdBy
+<http://fedora.info/definitions/v4/repository#createdBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#createdBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://fedora.info/definitions/v4/repository#hasLocation
+<http://fedora.info/definitions/v4/repository#hasLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#hasLocation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://fedora.info/definitions/v4/repository#hasLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://fedora.info/definitions/v4/repository#hasMember
+<http://fedora.info/definitions/v4/repository#hasMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#hasMember> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://fedora.info/definitions/v4/repository#hasMoreResults
+<http://fedora.info/definitions/v4/repository#hasMoreResults> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#hasMoreResults> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://fedora.info/definitions/v4/repository#hasMoreResults> <http://www.w3.org/2000/01/rdf-schema#label> "has more results"@en .
+# 
+# http://fedora.info/definitions/v4/repository#hasTransactionProvider
+<http://fedora.info/definitions/v4/repository#hasTransactionProvider> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#hasTransactionProvider> <http://www.w3.org/2000/01/rdf-schema#label> "has transaction provider"@en .
+# 
+# http://fedora.info/definitions/v4/repository#hasVersionLabel
+<http://fedora.info/definitions/v4/repository#hasVersionLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#hasVersionLabel> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://fedora.info/definitions/v4/repository#hasVersionLabel> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://fedora.info/definitions/v4/repository#isCheckedOut
+<http://fedora.info/definitions/v4/repository#isCheckedOut> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#isCheckedOut> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://fedora.info/definitions/v4/repository#isCheckedOut> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# http://fedora.info/definitions/v4/repository#lastModified
+<http://fedora.info/definitions/v4/repository#lastModified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#lastModified> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://fedora.info/definitions/v4/repository#lastModified> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://fedora.info/definitions/v4/repository#lastModifiedBy
+<http://fedora.info/definitions/v4/repository#lastModifiedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#lastModifiedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://fedora.info/definitions/v4/repository#numFixityChecks
+<http://fedora.info/definitions/v4/repository#numFixityChecks> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#numFixityChecks> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://fedora.info/definitions/v4/repository#numFixityChecks> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+# 
+# http://fedora.info/definitions/v4/repository#numFixityErrors
+<http://fedora.info/definitions/v4/repository#numFixityErrors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#numFixityErrors> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://fedora.info/definitions/v4/repository#numFixityErrors> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+# 
+# http://fedora.info/definitions/v4/repository#numFixityRepaired
+<http://fedora.info/definitions/v4/repository#numFixityRepaired> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#numFixityRepaired> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://fedora.info/definitions/v4/repository#numFixityRepaired> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+# 
+# http://fedora.info/definitions/v4/repository#numberOfChildren
+<http://fedora.info/definitions/v4/repository#numberOfChildren> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#numberOfChildren> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://fedora.info/definitions/v4/repository#numberOfChildren> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+# 
+# http://fedora.info/definitions/v4/repository#objectCount
+<http://fedora.info/definitions/v4/repository#objectCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#objectCount> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://fedora.info/definitions/v4/repository#objectSize
+<http://fedora.info/definitions/v4/repository#objectSize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#objectSize> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://fedora.info/definitions/v4/repository#writable
+<http://fedora.info/definitions/v4/repository#writable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://fedora.info/definitions/v4/repository#writable> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://fedora.info/definitions/v4/repository#writable> <http://www.w3.org/2000/01/rdf-schema#comment> "Whether or not the resource with this representation could have been altered by the same agent that received this representation if the request that retrieved this representation had been a mutating request." .
+<http://fedora.info/definitions/v4/repository#writable> <http://www.w3.org/2000/01/rdf-schema#label> "writable"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://fedora.info/definitions/v4/repository#AnnotatedResource
+<http://fedora.info/definitions/v4/repository#AnnotatedResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#AnnotatedResource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#Resource> .
+<http://fedora.info/definitions/v4/repository#AnnotatedResource> <http://www.w3.org/2000/01/rdf-schema#comment> "A Resource that maintains properties in its own right."@en .
+<http://fedora.info/definitions/v4/repository#AnnotatedResource> <http://www.w3.org/2000/01/rdf-schema#label> "annotated resource"@en .
+# 
+# http://fedora.info/definitions/v4/repository#Binary
+<http://fedora.info/definitions/v4/repository#Binary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#Binary> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#Resource> .
+<http://fedora.info/definitions/v4/repository#Binary> <http://www.w3.org/2002/07/owl#disjointWith> <http://fedora.info/definitions/v4/repository#Container> .
+<http://fedora.info/definitions/v4/repository#Binary> <http://www.w3.org/2002/07/owl#disjointWith> <http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> .
+<http://fedora.info/definitions/v4/repository#Binary> <http://www.w3.org/2000/01/rdf-schema#comment> "A bitstream, with no further data properties."@en .
+<http://fedora.info/definitions/v4/repository#Binary> <http://www.w3.org/2000/01/rdf-schema#label> "binary"@en .
+# 
+# http://fedora.info/definitions/v4/repository#Configuration
+<http://fedora.info/definitions/v4/repository#Configuration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#Configuration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#Thing> .
+<http://fedora.info/definitions/v4/repository#Configuration> <http://www.w3.org/2000/01/rdf-schema#comment> "A container for a Fedora configuration."@en .
+<http://fedora.info/definitions/v4/repository#Configuration> <http://www.w3.org/2000/01/rdf-schema#label> "Fedora configuration"@en .
+# 
+# http://fedora.info/definitions/v4/repository#Container
+<http://fedora.info/definitions/v4/repository#Container> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#Container> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#AnnotatedResource> .
+<http://fedora.info/definitions/v4/repository#Container> <http://www.w3.org/2002/07/owl#disjointWith> <http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> .
+<http://fedora.info/definitions/v4/repository#Container> <http://www.w3.org/2000/01/rdf-schema#comment> "A Fedora Container: the fundamental quantum of durable content in a Fedora repository."@en .
+<http://fedora.info/definitions/v4/repository#Container> <http://www.w3.org/2000/01/rdf-schema#label> "Fedora Container"@en .
+# 
+# http://fedora.info/definitions/v4/repository#EmbedResources
+<http://fedora.info/definitions/v4/repository#EmbedResources> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#EmbedResources> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#Thing> .
+<http://fedora.info/definitions/v4/repository#EmbedResources> <http://www.w3.org/2000/01/rdf-schema#comment> "The set of triples representing child resources of a given resource."@en .
+<http://fedora.info/definitions/v4/repository#EmbedResources> <http://www.w3.org/2000/01/rdf-schema#label> "embed resources"@en .
+# 
+# http://fedora.info/definitions/v4/repository#InboundReferences
+<http://fedora.info/definitions/v4/repository#InboundReferences> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#InboundReferences> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#Thing> .
+<http://fedora.info/definitions/v4/repository#InboundReferences> <http://www.w3.org/2000/01/rdf-schema#comment> "The set of triples representing other repository resources which link to a given resource."@en .
+<http://fedora.info/definitions/v4/repository#InboundReferences> <http://www.w3.org/2000/01/rdf-schema#label> "inbound references"@en .
+# 
+# http://fedora.info/definitions/v4/repository#NonRdfSourceDescription
+<http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#AnnotatedResource> .
+<http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "A container for a bitstream and associated properties."@en .
+<http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> <http://www.w3.org/2000/01/rdf-schema#label> "Fedora NonRdfSourceDescription"@en .
+# 
+# http://fedora.info/definitions/v4/repository#Pairtree
+<http://fedora.info/definitions/v4/repository#Pairtree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#Pairtree> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#Thing> .
+<http://fedora.info/definitions/v4/repository#Pairtree> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity that is a an intermediary node created in a PairTree hierarchy."@en .
+<http://fedora.info/definitions/v4/repository#Pairtree> <http://www.w3.org/2000/01/rdf-schema#label> "pair tree"@en .
+# 
+# http://fedora.info/definitions/v4/repository#Relations
+<http://fedora.info/definitions/v4/repository#Relations> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#Relations> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#Thing> .
+<http://fedora.info/definitions/v4/repository#Relations> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity that may be related to other repository entities."@en .
+# 
+# http://fedora.info/definitions/v4/repository#RepositoryRoot
+<http://fedora.info/definitions/v4/repository#RepositoryRoot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#RepositoryRoot> <http://www.w3.org/2000/01/rdf-schema#comment> "A repository root."@en .
+<http://fedora.info/definitions/v4/repository#RepositoryRoot> <http://www.w3.org/2000/01/rdf-schema#label> "repository root"@en .
+# 
+# http://fedora.info/definitions/v4/repository#Resource
+<http://fedora.info/definitions/v4/repository#Resource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#Resource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#Thing> .
+<http://fedora.info/definitions/v4/repository#Resource> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity that has been committed to the repository for safekeeping. For example, Fedora objects and datastreams are resources. A Fixity is not, because the provenance of the instance is entirely internal to the repository."@en .
+<http://fedora.info/definitions/v4/repository#Resource> <http://www.w3.org/2000/01/rdf-schema#label> "Fedora resource"@en .
+# 
+# http://fedora.info/definitions/v4/repository#ServerManaged
+<http://fedora.info/definitions/v4/repository#ServerManaged> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#ServerManaged> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#Thing> .
+<http://fedora.info/definitions/v4/repository#ServerManaged> <http://www.w3.org/2000/01/rdf-schema#comment> "The system-generated triples for a given resource (as opposed to explicity-declared properties)."@en .
+<http://fedora.info/definitions/v4/repository#ServerManaged> <http://www.w3.org/2000/01/rdf-schema#label> "server managed"@en .
+# 
+# http://fedora.info/definitions/v4/repository#Skolem
+<http://fedora.info/definitions/v4/repository#Skolem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#Skolem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#Thing> .
+<http://fedora.info/definitions/v4/repository#Skolem> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity that is a representation of an RDF Skolem node."@en .
+<http://fedora.info/definitions/v4/repository#Skolem> <http://www.w3.org/2000/01/rdf-schema#label> "skolem"@en .
+# 
+# http://fedora.info/definitions/v4/repository#Thing
+<http://fedora.info/definitions/v4/repository#Thing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#Thing> <http://www.w3.org/2000/01/rdf-schema#comment> "Something that is contemplated in the Fedora repository model."@en .
+<http://fedora.info/definitions/v4/repository#Thing> <http://www.w3.org/2000/01/rdf-schema#label> "Fedora thing"@en .
+# 
+# http://fedora.info/definitions/v4/repository#Tombstone
+<http://fedora.info/definitions/v4/repository#Tombstone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#Tombstone> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity that is a marker for a deleted node."@en .
+<http://fedora.info/definitions/v4/repository#Tombstone> <http://www.w3.org/2000/01/rdf-schema#label> "tombstone"@en .
+# 
+# http://fedora.info/definitions/v4/repository#Version
+<http://fedora.info/definitions/v4/repository#Version> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://fedora.info/definitions/v4/repository#Version> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://fedora.info/definitions/v4/repository#Container> .
+<http://fedora.info/definitions/v4/repository#Version> <http://www.w3.org/2000/01/rdf-schema#label> "A snapshot of a Fedora object at a given point in time."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://fedora.info/definitions/v4/repository#inaccessibleResource
+<http://fedora.info/definitions/v4/repository#inaccessibleResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://fedora.info/definitions/v4/repository#inaccessibleResource> <http://www.w3.org/2000/01/rdf-schema#comment> "A Fedora resource that is inaccessible."@en .
+<http://fedora.info/definitions/v4/repository#inaccessibleResource> <http://www.w3.org/2000/01/rdf-schema#label> "inaccessible resource"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://fedora.info/definitions/v4/repository#hasMember> <http://www.w3.org/2000/01/rdf-schema#comment> "Links to a newly-minted identifier which can be used to create a repository resource."@en .
+<http://fedora.info/definitions/v4/repository#hasMember> <http://www.w3.org/2000/01/rdf-schema#label> "has member"@en .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

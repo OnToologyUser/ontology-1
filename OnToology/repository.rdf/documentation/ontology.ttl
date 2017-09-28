@@ -1,0 +1,361 @@
+@prefix : <http://fedora.info/definitions/v4/repository##> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://fedora.info/definitions/v4/repository#> .
+
+<http://fedora.info/definitions/v4/repository#> rdf:type owl:Ontology ;
+                                                 rdfs:comment "Ontology for the Fedora data model, intended primarily to make it possible to expose Fedora-curated RDF predicates via de-reference-able URIs."@en ;
+                                                 rdfs:label "Fedora Commons Repository Ontology"@en ;
+                                                 owl:priorVersion <http://fedora.info/definitions/v4/2016/03/01/repository> ;
+                                                 owl:versionInfo "v4/2016/10/18"^^xsd:string .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://fedora.info/definitions/v4/repository#baseVersion
+<http://fedora.info/definitions/v4/repository#baseVersion> rdf:type owl:ObjectProperty ,
+                                                                    owl:FunctionalProperty ;
+                                                           rdfs:domain <http://fedora.info/definitions/v4/repository#Container> ;
+                                                           rdfs:range <http://fedora.info/definitions/v4/repository#Version> ;
+                                                           rdfs:label "base version"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#hasAccessRoles
+<http://fedora.info/definitions/v4/repository#hasAccessRoles> rdf:type owl:ObjectProperty ;
+                                                              rdfs:label "has access roles"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#hasChild
+<http://fedora.info/definitions/v4/repository#hasChild> rdf:type owl:ObjectProperty ,
+                                                                 owl:InverseFunctionalProperty ;
+                                                        rdfs:domain <http://fedora.info/definitions/v4/repository#Container> ;
+                                                        rdfs:range [ rdf:type owl:Class ;
+                                                                     owl:unionOf ( <http://fedora.info/definitions/v4/repository#Container>
+                                                                                   <http://fedora.info/definitions/v4/repository#NonRdfSourceDescription>
+                                                                                 )
+                                                                   ] ;
+                                                        rdfs:label "has child"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#hasContent
+<http://fedora.info/definitions/v4/repository#hasContent> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> ;
+                                                          rdfs:range <http://fedora.info/definitions/v4/repository#Binary> ;
+                                                          rdfs:comment "Indicates a binary in which content is stored for this datastream."@en ;
+                                                          rdfs:label "has content"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#hasFixityService
+<http://fedora.info/definitions/v4/repository#hasFixityService> rdf:type owl:ObjectProperty ;
+                                                                rdfs:label "has fixity service"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#hasMember
+<http://fedora.info/definitions/v4/repository#hasMember> rdf:type owl:ObjectProperty .
+
+
+###  http://fedora.info/definitions/v4/repository#hasNamespaces
+<http://fedora.info/definitions/v4/repository#hasNamespaces> rdf:type owl:ObjectProperty ;
+                                                             rdfs:label "has namespaces"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#hasParent
+<http://fedora.info/definitions/v4/repository#hasParent> rdf:type owl:ObjectProperty ,
+                                                                  owl:FunctionalProperty ;
+                                                         rdfs:domain <http://fedora.info/definitions/v4/repository#Resource> ;
+                                                         rdfs:range <http://fedora.info/definitions/v4/repository#Container> ;
+                                                         rdfs:label "has parent"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#hasResultsMember
+<http://fedora.info/definitions/v4/repository#hasResultsMember> rdf:type owl:ObjectProperty ;
+                                                                rdfs:range <http://fedora.info/definitions/v4/repository#Resource> ;
+                                                                rdfs:label "has results member"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#hasVersion
+<http://fedora.info/definitions/v4/repository#hasVersion> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <http://fedora.info/definitions/v4/repository#Container> ;
+                                                          rdfs:range <http://fedora.info/definitions/v4/repository#Version> ;
+                                                          rdfs:label "has version"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#hasVersions
+<http://fedora.info/definitions/v4/repository#hasVersions> rdf:type owl:ObjectProperty ;
+                                                           rdfs:label "has versions"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#isContentOf
+<http://fedora.info/definitions/v4/repository#isContentOf> rdf:type owl:ObjectProperty ,
+                                                                    owl:InverseFunctionalProperty ;
+                                                           rdfs:domain <http://fedora.info/definitions/v4/repository#Binary> ;
+                                                           rdfs:range <http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> ;
+                                                           rdfs:comment "Indicates a datastream for which this resource contains the content. "@en ;
+                                                           rdfs:label "is content of"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#predecessors
+<http://fedora.info/definitions/v4/repository#predecessors> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <http://fedora.info/definitions/v4/repository#Version> ;
+                                                            rdfs:range <http://fedora.info/definitions/v4/repository#Version> ;
+                                                            rdfs:label "predecessors"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#sparql
+<http://fedora.info/definitions/v4/repository#sparql> rdf:type owl:ObjectProperty ;
+                                                      rdfs:label "has sparql service"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://fedora.info/definitions/v4/repository#computedChecksum
+<http://fedora.info/definitions/v4/repository#computedChecksum> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://fedora.info/definitions/v4/repository#computedSize
+<http://fedora.info/definitions/v4/repository#computedSize> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://fedora.info/definitions/v4/repository#couldNotStoreProperty
+<http://fedora.info/definitions/v4/repository#couldNotStoreProperty> rdf:type owl:DatatypeProperty ;
+                                                                     rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://fedora.info/definitions/v4/repository#created
+<http://fedora.info/definitions/v4/repository#created> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                                       rdfs:range xsd:dateTime .
+
+
+###  http://fedora.info/definitions/v4/repository#createdBy
+<http://fedora.info/definitions/v4/repository#createdBy> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://fedora.info/definitions/v4/repository#hasLocation
+<http://fedora.info/definitions/v4/repository#hasLocation> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf owl:topDataProperty ;
+                                                           rdfs:range xsd:anyURI .
+
+
+###  http://fedora.info/definitions/v4/repository#hasMember
+<http://fedora.info/definitions/v4/repository#hasMember> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:range xsd:anyURI .
+
+
+###  http://fedora.info/definitions/v4/repository#hasMoreResults
+<http://fedora.info/definitions/v4/repository#hasMoreResults> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:range xsd:boolean ;
+                                                              rdfs:label "has more results"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#hasTransactionProvider
+<http://fedora.info/definitions/v4/repository#hasTransactionProvider> rdf:type owl:DatatypeProperty ;
+                                                                      rdfs:label "has transaction provider"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#hasVersionLabel
+<http://fedora.info/definitions/v4/repository#hasVersionLabel> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                                               rdfs:range xsd:string .
+
+
+###  http://fedora.info/definitions/v4/repository#isCheckedOut
+<http://fedora.info/definitions/v4/repository#isCheckedOut> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                                            rdfs:range xsd:boolean .
+
+
+###  http://fedora.info/definitions/v4/repository#lastModified
+<http://fedora.info/definitions/v4/repository#lastModified> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                                            rdfs:range xsd:dateTime .
+
+
+###  http://fedora.info/definitions/v4/repository#lastModifiedBy
+<http://fedora.info/definitions/v4/repository#lastModifiedBy> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://fedora.info/definitions/v4/repository#numFixityChecks
+<http://fedora.info/definitions/v4/repository#numFixityChecks> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                                               rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://fedora.info/definitions/v4/repository#numFixityErrors
+<http://fedora.info/definitions/v4/repository#numFixityErrors> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                                               rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://fedora.info/definitions/v4/repository#numFixityRepaired
+<http://fedora.info/definitions/v4/repository#numFixityRepaired> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                                 rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://fedora.info/definitions/v4/repository#numberOfChildren
+<http://fedora.info/definitions/v4/repository#numberOfChildren> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:subPropertyOf owl:topDataProperty ;
+                                                                rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://fedora.info/definitions/v4/repository#objectCount
+<http://fedora.info/definitions/v4/repository#objectCount> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://fedora.info/definitions/v4/repository#objectSize
+<http://fedora.info/definitions/v4/repository#objectSize> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://fedora.info/definitions/v4/repository#writable
+<http://fedora.info/definitions/v4/repository#writable> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:range xsd:boolean ;
+                                                        rdfs:comment "Whether or not the resource with this representation could have been altered by the same agent that received this representation if the request that retrieved this representation had been a mutating request."^^xsd:string ;
+                                                        rdfs:label "writable"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://fedora.info/definitions/v4/repository#AnnotatedResource
+<http://fedora.info/definitions/v4/repository#AnnotatedResource> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://fedora.info/definitions/v4/repository#Resource> ;
+                                                                 rdfs:comment "A Resource that maintains properties in its own right."@en ;
+                                                                 rdfs:label "annotated resource"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#Binary
+<http://fedora.info/definitions/v4/repository#Binary> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://fedora.info/definitions/v4/repository#Resource> ;
+                                                      owl:disjointWith <http://fedora.info/definitions/v4/repository#Container> ,
+                                                                       <http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> ;
+                                                      rdfs:comment "A bitstream, with no further data properties."@en ;
+                                                      rdfs:label "binary"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#Configuration
+<http://fedora.info/definitions/v4/repository#Configuration> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://fedora.info/definitions/v4/repository#Thing> ;
+                                                             rdfs:comment "A container for a Fedora configuration."@en ;
+                                                             rdfs:label "Fedora configuration"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#Container
+<http://fedora.info/definitions/v4/repository#Container> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://fedora.info/definitions/v4/repository#AnnotatedResource> ;
+                                                         owl:disjointWith <http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> ;
+                                                         rdfs:comment "A Fedora Container: the fundamental quantum of durable content in a Fedora repository."@en ;
+                                                         rdfs:label "Fedora Container"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#EmbedResources
+<http://fedora.info/definitions/v4/repository#EmbedResources> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://fedora.info/definitions/v4/repository#Thing> ;
+                                                              rdfs:comment "The set of triples representing child resources of a given resource."@en ;
+                                                              rdfs:label "embed resources"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#InboundReferences
+<http://fedora.info/definitions/v4/repository#InboundReferences> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://fedora.info/definitions/v4/repository#Thing> ;
+                                                                 rdfs:comment "The set of triples representing other repository resources which link to a given resource."@en ;
+                                                                 rdfs:label "inbound references"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#NonRdfSourceDescription
+<http://fedora.info/definitions/v4/repository#NonRdfSourceDescription> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://fedora.info/definitions/v4/repository#AnnotatedResource> ;
+                                                                       rdfs:comment "A container for a bitstream and associated properties."@en ;
+                                                                       rdfs:label "Fedora NonRdfSourceDescription"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#Pairtree
+<http://fedora.info/definitions/v4/repository#Pairtree> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://fedora.info/definitions/v4/repository#Thing> ;
+                                                        rdfs:comment "An entity that is a an intermediary node created in a PairTree hierarchy."@en ;
+                                                        rdfs:label "pair tree"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#Relations
+<http://fedora.info/definitions/v4/repository#Relations> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://fedora.info/definitions/v4/repository#Thing> ;
+                                                         rdfs:comment "An entity that may be related to other repository entities."@en .
+
+
+###  http://fedora.info/definitions/v4/repository#RepositoryRoot
+<http://fedora.info/definitions/v4/repository#RepositoryRoot> rdf:type owl:Class ;
+                                                              rdfs:comment "A repository root."@en ;
+                                                              rdfs:label "repository root"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#Resource
+<http://fedora.info/definitions/v4/repository#Resource> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://fedora.info/definitions/v4/repository#Thing> ;
+                                                        rdfs:comment "An entity that has been committed to the repository for safekeeping. For example, Fedora objects and datastreams are resources. A Fixity is not, because the provenance of the instance is entirely internal to the repository."@en ;
+                                                        rdfs:label "Fedora resource"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#ServerManaged
+<http://fedora.info/definitions/v4/repository#ServerManaged> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://fedora.info/definitions/v4/repository#Thing> ;
+                                                             rdfs:comment "The system-generated triples for a given resource (as opposed to explicity-declared properties)."@en ;
+                                                             rdfs:label "server managed"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#Skolem
+<http://fedora.info/definitions/v4/repository#Skolem> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://fedora.info/definitions/v4/repository#Thing> ;
+                                                      rdfs:comment "An entity that is a representation of an RDF Skolem node."@en ;
+                                                      rdfs:label "skolem"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#Thing
+<http://fedora.info/definitions/v4/repository#Thing> rdf:type owl:Class ;
+                                                     rdfs:comment "Something that is contemplated in the Fedora repository model."@en ;
+                                                     rdfs:label "Fedora thing"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#Tombstone
+<http://fedora.info/definitions/v4/repository#Tombstone> rdf:type owl:Class ;
+                                                         rdfs:comment "An entity that is a marker for a deleted node."@en ;
+                                                         rdfs:label "tombstone"@en .
+
+
+###  http://fedora.info/definitions/v4/repository#Version
+<http://fedora.info/definitions/v4/repository#Version> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://fedora.info/definitions/v4/repository#Container> ;
+                                                       rdfs:label "A snapshot of a Fedora object at a given point in time."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://fedora.info/definitions/v4/repository#inaccessibleResource
+<http://fedora.info/definitions/v4/repository#inaccessibleResource> rdf:type owl:NamedIndividual ;
+                                                                    rdfs:comment "A Fedora resource that is inaccessible."@en ;
+                                                                    rdfs:label "inaccessible resource"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://fedora.info/definitions/v4/repository#hasMember> rdfs:comment "Links to a newly-minted identifier which can be used to create a repository resource."@en ;
+                                                         rdfs:label "has member"@en .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
